@@ -33,7 +33,7 @@ public class AddColorsServlet extends HttpServlet {
             name = req.getParameter("name");
             Colors colors = new Colors(color_id,rgb,name);
             colorsDAO.addColor(colors);
-            resp.sendRedirect("/colors");
+            resp.sendRedirect("/listColors");
         }
     }
 }

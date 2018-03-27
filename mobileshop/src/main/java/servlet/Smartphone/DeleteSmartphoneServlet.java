@@ -20,6 +20,6 @@ public class DeleteSmartphoneServlet extends HttpServlet {
             int product_id = Integer.parseInt(req.getParameter("product_id"));
             smartphoneDAO.deleteSmartphone(product_id);
         }
-        resp.sendRedirect("smartphone");
+        resp.sendRedirect("/listSmartphones");
     }
 }

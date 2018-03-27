@@ -20,6 +20,6 @@ public class DeleteCategoriesServlet extends HttpServlet {
             int category_id = Integer.parseInt(req.getParameter("category_id"));
             categoriesDAO.deleteCategory(category_id);
         }
-        resp.sendRedirect("categories");
+        resp.sendRedirect("/listCategories");
     }
 }

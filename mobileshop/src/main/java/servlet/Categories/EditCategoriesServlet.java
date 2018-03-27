@@ -41,7 +41,7 @@ public class EditCategoriesServlet extends HttpServlet {
             categories.setName(name);
             categories.setCategory_id(category_id);
             categoriesDAO.updateCategory(categories);
-            resp.sendRedirect("/category");
+            resp.sendRedirect("/listCategories");
         }
     }
 }

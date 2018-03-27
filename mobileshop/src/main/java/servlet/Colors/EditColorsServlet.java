@@ -45,7 +45,7 @@ public class EditColorsServlet extends HttpServlet {
             colors.setColor_id(color_id);
             colors.setRgb(rgb);
             colorsDAO.updateColor(colors);
-            resp.sendRedirect("/colorsList");
+            resp.sendRedirect("/listColors");
         }
     }
 }

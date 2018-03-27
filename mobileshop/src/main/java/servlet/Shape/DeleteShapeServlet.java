@@ -20,6 +20,6 @@ public class DeleteShapeServlet extends HttpServlet {
             int shape_id = Integer.parseInt(req.getParameter("shape_id"));
             shapeDAO.deleteShape(shape_id);
         }
-        resp.sendRedirect("shape");
+        resp.sendRedirect("/listShapes");
     }
 }

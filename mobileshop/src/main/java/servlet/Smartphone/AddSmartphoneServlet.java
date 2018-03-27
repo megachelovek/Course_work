@@ -45,7 +45,7 @@ public class AddSmartphoneServlet extends HttpServlet {
             color_id = Integer.parseInt(req.getParameter("color_id"));
             Smartphone smartphone = new Smartphone(product_id,name,cpu,ram,rom,shape_id,color_id);
             smartphoneDAO.addSmartphone(smartphone);
-            resp.sendRedirect("/smartphone");
+            resp.sendRedirect("/listSmartphones");
         }
     }
 }

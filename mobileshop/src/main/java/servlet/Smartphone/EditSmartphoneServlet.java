@@ -61,7 +61,7 @@ public class EditSmartphoneServlet extends HttpServlet {
             smartphone.setShape_id(shape_id);
             smartphone.setShape_id(shape_id);
             smartphoneDAO.updateSmartphone(smartphone);
-            resp.sendRedirect("/listSmartphone");
+            resp.sendRedirect("/listSmartphones");
         }
     }
 }

@@ -20,6 +20,6 @@ public class DeleteColorsServlet extends HttpServlet {
             int color_id = Integer.parseInt(req.getParameter("color_id"));
             colorsDAO.deleteColor(color_id);
         }
-        resp.sendRedirect("colors");
+        resp.sendRedirect("/listColors");
     }
 }

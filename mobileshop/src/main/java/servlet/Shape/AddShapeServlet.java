@@ -36,7 +36,7 @@ public class AddShapeServlet extends HttpServlet {
             weight = Integer.parseInt(req.getParameter("weight"));
             Shape shape = new Shape(shape_id,width,height,weight);
             shapeDAO.addShape(shape);
-            resp.sendRedirect("/shape");
+            resp.sendRedirect("/listShapes");
         }
     }
 }

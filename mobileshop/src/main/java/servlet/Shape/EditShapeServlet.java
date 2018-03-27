@@ -49,7 +49,7 @@ public class EditShapeServlet extends HttpServlet {
             shape.setHeight(height);
             shape.setWeight(weight);
             shapeDAO.updateShape(shape);
-            resp.sendRedirect("/ShapeList");
+            resp.sendRedirect("/listShapes");
         }
     }
 }
