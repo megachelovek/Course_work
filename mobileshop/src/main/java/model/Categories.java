@@ -11,6 +11,9 @@ public class Categories {
     public Categories(String name){
         this.name = name;
     }
+    public Categories(){
+
+    }
 
     public String getName() {
         return name;

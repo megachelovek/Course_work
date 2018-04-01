@@ -3,8 +3,10 @@ package dao.implementsDAO;
 import dao.DAO;
 import dao.CategoriesDAO;
 import model.Categories;
+import org.postgresql.Driver;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,13 +34,12 @@ public  class CategoriesDAOimplements implements CategoriesDAO{
 
     @Override
     public Categories getCategory(String name) {
-        String query = "SELECT * FROM categories WHERE name = ?";
-        Categories category = null;
-        try (Connection connection = dao.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, name);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
+        //String query = "SELECT * FROM categories WHERE name = ?";
+        Categories category = new Categories();
+        ResultSet resultSet = dao.execSQL(String.format("SELECT * FROM categories WHERE name = '%1$s'",name));
+        try {
+            while (resultSet.next())
+            {
                 int id = resultSet.getInt(CATEGORY_ID);
                 String namec = resultSet.getString(NAME);
                 category = new Categories(id, namec);
@@ -107,8 +108,8 @@ public  class CategoriesDAOimplements implements CategoriesDAO{
 
     @Override
     public List<Categories> getCategories() {
-        String query = "SELECT * FROM categories ORDER BY current_standing";
         List<Categories> categories = new ArrayList<>();
+        String query = "SELECT * FROM categories " ;//ORDER BY current_standing";
         try (Connection connection = dao.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -122,5 +123,20 @@ public  class CategoriesDAOimplements implements CategoriesDAO{
             e.printStackTrace();
         }
         return categories;
+    }
+
+    public List<Categories> getAll() {
+        List<Categories> CategoriesList1 = new ArrayList<>();
+        ResultSet rs = dao.execSQL("select * from categories");
+        Categories emp;
+        try {
+            while (rs.next()){
+                emp = new Categories(rs.getInt("categories_id"),rs.getString("name"));
+                CategoriesList1.add(emp);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return CategoriesList1;
     }
 }

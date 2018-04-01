@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Добавить категорию</title>
@@ -9,7 +10,7 @@
 <div class="description">
     <form action="/addCategories" method="post">
         Название категории </br>
-        <input name="category_name" type="text" placeholder="category_name" class="textbox"> </br>
+        <input name="name" type="text" placeholder="category_name" class="textbox"> </br>
         <input type="submit" value="Add_categories" class="button"/>
         <a href="/listSmartphone">Cancel</a>
     </form>

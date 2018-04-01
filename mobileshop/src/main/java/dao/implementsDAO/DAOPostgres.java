@@ -15,7 +15,8 @@ public class DAOPostgres extends DAO {
 
     public DAOPostgres() {
         super("org.postgresql.Driver");
-    }
+            try{Class.forName("org.postgresql.Driver");}catch (ClassNotFoundException e2) {e2.printStackTrace(); }
+            }
 
     @Override
     public void setURL(String host, String database, int port) {
@@ -27,6 +28,7 @@ public class DAOPostgres extends DAO {
 
     @Override
     public Connection getConnection() {
+        try{Class.forName("org.postgresql.Driver");}catch (ClassNotFoundException e2) {e2.printStackTrace();}
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(url, properties);

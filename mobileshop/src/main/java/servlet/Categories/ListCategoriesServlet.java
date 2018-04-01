@@ -20,10 +20,10 @@ public class ListCategoriesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session =req.getSession();
         DAO dao = (DAO) session.getAttribute("dao");
-        CategoriesDAO categoriesDAO = new CategoriesDAOimplements(dao);
-        List<Categories> categories1 = categoriesDAO.getCategories();
+        CategoriesDAOimplements categoriesDAO = new CategoriesDAOimplements(dao);
+        List<Categories> categories1 = categoriesDAO.getAll();
         session.setAttribute("categories", categories1);
         session.setAttribute("categoriesDAO", categoriesDAO);
-        req.getRequestDispatcher("categories.jsp").forward(req,resp);
+       // req.getRequestDispatcher("categories.jsp").forward(req,resp);
     }
 }

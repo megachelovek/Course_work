@@ -15,6 +15,8 @@ public interface CategoriesDAO {
 
     List<Categories> getCategories();
 
+    List<Categories> getAll();
+
     Categories getCategory(String name);
 
     Categories getCategory(int category_id);

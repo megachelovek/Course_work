@@ -11,7 +11,7 @@
     <td>Название</td>
     </thead>
     <tbody>
-    <c:forEach items="${categories}" var="categories">
+    <c:forEach var="categories" items="${categories}" >
     <tr>
         <td>${categories.name}
         </td>
