@@ -12,7 +12,7 @@
         Название категории </br>
         <input name="name" type="text" placeholder="category_name" class="textbox"> </br>
         <input type="submit" value="Add_categories" class="button"/>
-        <a href="/listSmartphone">Cancel</a>
+        <a href="/listCategories">Cancel</a>
     </form>
 </div>
 </body>

@@ -53,7 +53,7 @@ public class AddCategoriesServlet extends HttpServlet {
             Categories newCat = new Categories(name);
             if (catDAO.getCategory(newCat.getName()) != null) {
                 catDAO.addCategory(newCat);
-            //    request.getRequestDispatcher("listCategories.jsp").forward(request, response);
+                request.getRequestDispatcher("listCategories.jsp").forward(request, response);
             }
         }
     }

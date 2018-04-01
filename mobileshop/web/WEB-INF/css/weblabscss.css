@@ -29,3 +29,12 @@
 .table_block h1{
     padding: 10px;
 }
+.tr{
+    border: 2px black;
+}
+.tbody{
+    border: 3px brown;
+}
+.table{
+    border: double 3px black;
+}

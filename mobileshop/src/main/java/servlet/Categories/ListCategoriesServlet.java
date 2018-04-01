@@ -21,9 +21,9 @@ public class ListCategoriesServlet extends HttpServlet {
         HttpSession session =req.getSession();
         DAO dao = (DAO) session.getAttribute("dao");
         CategoriesDAOimplements categoriesDAO = new CategoriesDAOimplements(dao);
-        List<Categories> categories1 = categoriesDAO.getAll();
-        session.setAttribute("categories", categories1);
-        session.setAttribute("categoriesDAO", categoriesDAO);
-       // req.getRequestDispatcher("categories.jsp").forward(req,resp);
+        List<Categories> listCategories1 = categoriesDAO.getAll();
+        session.setAttribute("categories", listCategories1);
+        //session.setAttribute("categoriesDAO", categoriesDAO);
+        req.getRequestDispatcher("listCategories.jsp").forward(req,resp);
     }
 }
