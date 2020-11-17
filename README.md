@@ -1,7 +1,7 @@
 # Mobile shop course work
 
 Course work at the university. 
-Implemented mobile shop by Java Servlets.
+Implemented mobile shop by Java Servlets. 
 
 ### Technology stack / Libraries
   - Java
